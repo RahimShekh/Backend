@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 //server db se kaise connect hoga ye tum db.js
 //file mein likhoge
 
 function connectToDB()
 {
-    mongoose.connect("mongodb+srv://rahimshekh46751:Rahim$k786@cluster0.nflbjmw.mongodb.net/notesapp")
+    mongoose.connect(process.env.MONGODB_URL)
     .then(()=>{
         console.log("connected to DB");
     })
